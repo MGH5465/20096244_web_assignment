@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang ='en'>
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Products Page</title>
+</head>
+<style>
+    *{margin:0;
+    padding:0;}
+html{
+    font-size: 62.5%;
+}
+body{
+    overflow:auto;
+    background-color:#fff9f9;
+}
+hr{
+    margin:3em 4em 5em;
+}
+#navispace{
+    transition:top 0.3s; 
+    position:fixed;
+    top:0px;
+    width:100%;
+    display:block;
+    z-index:2;
+}
+.navimenu{
+    background-color:rgb(87, 223, 178);
+    overflow:auto;
+}
+.navimenu a{
+    color:white;
+    font-size:2rem;
+    text-align:center;
+    display: inline-block;
+    padding:0.7em;
+}
+.navimenu a:hover{
+    background-color:cadetblue;
+    cursor:pointer;
+    text-decoration:underline;
+}
+.navimenu a:active{
+    background-color:rgb(87, 223, 178);
+    text-decoration:underline;
+}
+.cart{
+    width:4%;
+    margin:0.25%;
+    text-align:center;
+    min-width:40px;
+    padding:0.25%;
+    position:absolute;
+    bottom:10%;
+    right: 1%;
+}
+.cart:hover{
+    background-color:cadetblue;
+    cursor:pointer;
+}
+.cart:active{
+    background-color:rgb(87, 223, 178);
+}
+.loginnavi{
+    right: 10%; 
+    width:4%;
+    margin:0.25%;
+    text-align:center;
+    min-width:40px;
+    padding:0.25%;
+    display:inline-block;
+    position:absolute;
+    bottom:10%;
+    right: 10%;
+}
+.loginnavi:hover{
+    background-color:cadetblue;
+    cursor:pointer;
+}
+.loginnavi:active{
+    background-color:rgb(87, 223, 178);
+}
+#title{
+    width:40%;
+    border:10px double;
+    background-color: #505050;
+    padding:1.5%;
+    border-radius:5px 30px 5px 30px;
+    margin:3% 27% 0%;
+}
+#itemspace{
+    background-color:#0A4958;
+    border-top:2px solid black;
+    border-bottom:2px solid black;
+    width:100%;
+ }
+ h1{
+    color:white;
+    text-align:center;
+    margin-top:1%;
+    font-size: 3rem;
+ }
+.items{
+    background-color:antiquewhite;
+    padding:4% 3%;
+    border: 2px solid;
+    margin:3% 2% 9%;
+    box-shadow: -3px 5px orangered;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: center;
+ }
+ .items a{
+    border: 2px solid gray;
+    width:250px;
+    height:250px;
+    display:inline-block;
+    background-color: white;
+    text-align:center;
+    position:relative;
+    top:0;
+    font-size:1.6rem;
+    margin:0.25% 0.35%;
+ }
+ .items a:hover{
+    cursor:pointer;
+    transition:top 0.1s;
+    text-decoration:underline;
+    top:-5px;
+ }
+ .items a:active{
+    top:-5px;
+    background-color:rgb(222, 229, 235);
+    transition: 0.1s;    
+ }
+ .itemimg{
+    border:1px solid;
+    width:90%;
+    height:10em;
+    text-align:center;
+    margin-left:auto;
+    margin-right:auto;
+ }
+ #end{
+    background-color:antiquewhite;
+    width:100%;
+    height:100px;
+    text-align: center;
+ }
+</style>
+<body>
+    <div id="navispace">
+        <div class="navimenu">
+            <a onclick="window.location.href='HomePage.html'">Home</a>
+            <a onclick="window.location.href='Products.html'">Products</a>
+            <a onclick="window.location.href='Contacts.html'">Contacts</a>
+            <a onclick="window.location.href='About.html'">About</a>
+            <div class="loginnavi" onclick="window.location.href='Login.html'">
+                <img src="person.png" alt="login"; width="40%" height="40%">
+            </div>
+            <div class="cart" onclick="window.location.href='Cart.html'">
+                <img src="shoppingcart.png" alt="addtocart"; width="60%" height="60%">
+            </div>
+        </div>
+    </div>
+    <br>
+    <h1 id="title">Available Products</h1>
+    <hr>
+    <div id="itemspace">
+        <div class="items">
+            <a>
+                <div class="itemimg">
+                    <img src="shoe1.jpg" width="220rem">
+                </div>
+                <p>Shoe 1</p>
+            </a>
+            <a>
+                <div class="itemimg">
+                    <img src="shoe2.jpg" width="220rem">
+                </div>
+                <p>Shoe 2</p>
+            </a>
+            <a>
+                <div class="itemimg">
+                    <img src="shoe3.jpg" width="220rem">
+                </div>
+                <p>Shoe 3</p>
+            </a>
+            <a>
+                <div class="itemimg">
+                    <img src="shoe4.jpg" width="220rem">
+                </div>
+                <p>Shoe 4</p>
+            </a>
+            <a>
+                <div class="itemimg">
+                    <img src="shoe5.jpg" width="220rem">
+                </div>
+                <p>Shoe 5</p>
+            </a>
+            <a>
+                <div class="itemimg">
+                    <img src="shoe6.jpg" width="220rem">
+                </div>
+                <p>Shoe 6</p>
+            </a>
+            <a>
+                <div class="itemimg">
+                    <img src="shoe7.jpg" width="220rem">
+                </div>
+                <p>Shoe 7</p>
+            </a>
+            <a>
+                <div class="itemimg">
+                    <img src="shoe8.jpg" width="220rem">
+                </div>
+                <p>Shoe 8</p>
+            </a>
+            <a>
+                <div class="itemimg">
+                    <img src="shoe9.jpg" width="220rem">
+                </div>
+                <p>Shoe 9</p>
+            </a>
+            <a>
+                <div class="itemimg">
+                    <img src="shoe10.jpg" width="220rem">
+                </div>
+                <p>Shoe 10</p>
+            </a>
+            <a>
+                <div class="itemimg">
+                    <img src="shoe11.jpg" width="220rem">
+                </div>
+                <p>Shoe 11</p>
+            </a>
+            <a>
+                <div class="itemimg">
+                    <img src="shoe12.jpg" width="220rem">
+                </div>
+                <p>Shoe 12</p>
+            </a>
+            <a>
+                <div class="itemimg">
+                    <img src="shoe13.jpg" width="220rem">
+                </div>
+                <p>Shoe 13</p>
+            </a>
+            <a>
+                <div class="itemimg">
+                    <img src="shoe14.jpg" width="220rem">
+                </div>
+                <p>Shoe 14</p>
+            </a>
+            <a>
+                <div class="itemimg">
+                    <img src="shoe15.jpg" width="220rem">
+                </div>
+                <p>Shoe 15</p>
+            </a>
+        </div>
+    </div>
+
+    <hr>
+    <div id="end">
+        <p>end of page</p>
+    </div>
+    <script>
+        var scrollpos1 = window.pageYOffset;
+        window.onscroll=function(){naviscroll()};
+        function naviscroll(){
+            var scrollpos2 = window.pageYOffset;
+            if(scrollpos1>scrollpos2){
+                document.getElementById("navispace").style.top="0px";
+            }
+            else{
+                document.getElementById("navispace").style.top="-100px";
+            }
+            scrollpos1 = scrollpos2;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang ='en'>
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Home Page</title>
+</head>
+<style>
+*{margin:0;
+    padding:0;}
+html{
+    font-size: 62.5%;
+}
+body{
+    overflow:auto;
+    background-color:#fff9f9;
+}
+hr{
+    margin:5em 4em 7em;
+}
+#navispace{
+    transition:top 0.5s; 
+    position:fixed;
+    top:0px;
+    width:100%;
+    display:block;
+    z-index:2;
+}
+.navimenu{
+    background-color:rgb(87, 223, 178);
+    overflow:auto;
+}
+.navimenu a{
+    color:white;
+    font-size:2rem;
+    text-align:center;
+    display: inline-block;
+    padding:0.7em;
+}
+.navimenu a:hover{
+    background-color:cadetblue;
+    cursor:pointer;
+    text-decoration:underline;
+}
+.navimenu a:active{
+    background-color:rgb(87, 223, 178);
+    text-decoration:underline;
+}
+.cart{
+    width:4%;
+    margin:0.25%;
+    text-align:center;
+    min-width:40px;
+    padding:0.25%;
+    position:absolute;
+    bottom:10%;
+    right: 1%;
+}
+.cart:hover{
+    background-color:cadetblue;
+    cursor:pointer;
+}
+.cart:active{
+    background-color:rgb(87, 223, 178);
+}
+.loginnavi{
+    right: 10%; 
+    width:4%;
+    margin:0.25%;
+    text-align:center;
+    min-width:40px;
+    padding:0.25%;
+    display:inline-block;
+    position:absolute;
+    bottom:10%;
+    right: 10%;
+}
+.loginnavi:hover{
+    background-color:cadetblue;
+    cursor:pointer;
+}
+.loginnavi:active{
+    background-color:rgb(87, 223, 178);
+}
+.imagespace{
+    padding:5% 2.5%;
+    margin:4% 10% 8%;
+    background-color:antiquewhite;
+    width: 75%;
+    height:100%;
+    border: 1px solid;
+    box-shadow: 5px 10px rgb(215, 168, 107);
+    position:relative;
+}
+.images{
+    width:70%;
+    height:70%;
+    margin-left:auto;
+    margin-right:auto;
+    display:none;
+}
+
+.previous, .next{
+    width:4.5%;
+    font-size: 4rem;
+    font-weight:bold;
+    color:white;
+    text-align:center;
+    border-radius:5px;
+    background-color: rgba(0,0,0,0.5);
+    padding:1%;
+    margin:0% 7%;
+    position:absolute;
+    top:45%;
+}
+.next{
+    right: 1%;
+ }
+ .previous{
+    left: 1%;
+ }
+ .previous:hover, .next:hover{
+    background-color: rgba(0,0,0,0.8);
+    cursor:pointer;
+ }
+ .previous:active, .next:active{
+    background-color: rgba(0,0,0,0.5);
+ }
+ #adspace{
+    width:100%;
+    background-color:antiquewhite;
+    padding: 2% 0% 4%;
+    border-top:1px solid ;
+    border-bottom:1px solid;
+    box-shadow: 0px 9px gray;
+ }
+ .ad{
+    padding-left:1%;
+    padding-right:1%;
+    margin:1.5% 11% 1%;
+    text-align:center;
+ }
+ h2{
+    font-size:5rem;
+    margin-left:9%;
+ }
+ #itemspace{
+    background-color:#0A4958;
+    border-top:2px solid black;
+    border-bottom:2px solid black;
+    width:100%;
+ }
+ h1{
+    color:white;
+    text-align:center;
+    margin-top:1%;
+    font-size: 4rem;
+ }
+ h1.one{
+    color:black;
+    text-align:center;
+    margin-top:1%;
+    font-size: 5rem;
+ }
+ .items{
+    background-color:antiquewhite;
+    padding:4% 3%;
+    border: 2px solid;
+    margin:3% 2% 9%;
+    box-shadow: -3px 5px orangered;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+ }
+ .items a{
+    border: 2px solid gray;
+    width:250px;
+    height:250px;
+    display:inline-block;
+    background-color: white;
+    text-align:center;
+    position:relative;
+    top:0;
+    font-size:1.6rem;
+    margin:0.25% 0.35%;
+ }
+ .items a:hover{
+    cursor:pointer;
+    transition:top 0.1s;
+    text-decoration:underline;
+    top:-5px;
+ }
+ .items a:active{
+    top:-5px;
+    background-color:rgb(222, 229, 235);
+    transition: 0.1s;    
+ }
+ .itemimg{
+    border:1px solid;
+    width:90%;
+    height:10em;
+    margin-left:auto;
+    margin-right:auto;
+ }
+ #end{
+    background-color:antiquewhite;
+    width:100%;
+    height:100px;
+    text-align: center;
+ }
+</style>
+<body>
+    <div id="navispace">
+        <div class="navimenu">
+            <a onclick="window.location.href='HomePage.html'">Home</a>
+            <a onclick="window.location.href='Products.html'">Products</a>
+            <a onclick="window.location.href='Contacts.html'">Contacts</a>
+            <a onclick="window.location.href='About.html'">About</a>
+            <div class="loginnavi" onclick="window.location.href='Login.html'">
+                <img src="person.png" alt="login"; width="40%" height="40%">
+            </div>            
+            <div class="cart" onclick="window.location.href='cart.html'">
+                <img src="shoppingcart.png" alt="addtocart"; width="60%" height="60%">
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="imagespace">
+        <div class="images">
+            <img src="shoe1.jpg"; width="100%" height="100%">
+        </div>
+        <div class="images">
+            <img src="shoe2.jpg"; width="100%" height="100%">
+        </div>
+        <div class="images">
+            <img src="shoe3.jpg"; width="100%" height="100%">
+        </div>
+        <div class="images">
+            <img src="shoe4.jpg"; width="100%" height="100%">
+        </div>
+        <div class="images">
+            <img src="shoe5.jpg"; width="100%" height="100%">
+        </div>
+        <a class="previous" onclick="movegallery(-1)">&#8249;</a>
+        <a class="next" onclick="movegallery(1)">&#8250;</a>
+    </div>
+    <hr>
+    <div id="adspace">
+        <h2>Advertisement</h2>
+        <br>
+        <div class="ad">
+            <iframe width="70%" height="499" src="https://www.youtube.com/embed/geFi-ZpN2ZM" title="Shoes by 2GO - Theatrical Ad Film | Commercial" 
+            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+    <hr>
+    <div id="itemspace">
+        <h1>On Sales!</h1>
+        <div class="items">
+            <a>
+                <div class="itemimg">
+                    <img src="shoe1.jpg" width="220rem">
+                </div>
+                <p>Shoe 1</p>
+            </a>
+            <a>
+                <div class="itemimg">
+                    <img src="shoe2.jpg" width="220rem">
+                </div>
+                <p>Shoe 2</p>
+            </a>
+            <a>
+                <div class="itemimg">
+                    <img src="shoe3.jpg" width="220rem">
+                </div>
+                <p>Shoe 3</p>
+            </a>
+            <a>
+                <div class="itemimg">
+                    <img src="shoe4.jpg" width="220rem">
+                </div>
+                <p>Shoe 4</p>
+            </a>
+            <a>
+                <div class="itemimg">
+                    <img src="shoe5.jpg" width="220rem">
+                </div>
+                <p>Shoe 5</p>
+            </a>
+            <a>
+                <div class="itemimg">
+                    <img src="shoe6.jpg" width="220rem">
+                </div>
+                <p>Shoe 6</p>
+            </a>
+            <a>
+                <div class="itemimg">
+                    <img src="shoe7.jpg" width="220rem">
+                </div>
+                <p>Shoe 7</p>
+            </a>
+            <a>
+                <div class="itemimg">
+                    <img src="shoe8.jpg" width="220rem">
+                </div>
+                <p>Shoe 8</p>
+            </a>
+            <a>
+                <div class="itemimg">
+                    <img src="shoe9.jpg" width="220rem">
+                </div>
+                <p>Shoe 9</p>
+            </a>
+                <a>
+                <div class="itemimg">
+                    <img src="shoe10.jpg" width="220rem">
+                </div>
+                <p>Shoe 10</p>
+            </a>
+        </div>
+    </div>
+    <hr>
+    <div id="end">
+        <p>end of page</p>
+    </div>
+
+    <script>
+        let slideIndex = 1;
+        imagecount(slideIndex);
+        function movegallery(n){
+            imagecount(slideIndex+=n);
+        }
+        function imagecount(n){
+            let gallery=document.getElementsByClassName("images");
+            if(n > gallery.length){slideIndex=1}
+            if(n < 1){slideIndex=gallery.length}
+            for(z=0; z<gallery.length; z++){
+                gallery[z].style.display="none";
+            }
+            gallery[slideIndex-1].style.display="block";
+        }
+
+        var scrollpos1 = window.pageYOffset;
+        window.onscroll=function(){naviscroll()};
+        function naviscroll(){
+            var scrollpos2 = window.pageYOffset;
+            if(scrollpos1>scrollpos2){
+                document.getElementById("navispace").style.top="0px";
+            }
+            else{
+                document.getElementById("navispace").style.top="-100px";
+            }
+            scrollpos1 = scrollpos2;
+        }
+    </script>
+</body>
+</html>

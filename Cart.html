@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang ='en'>
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Shopping Cart Page</title>
+</head>
+<style>
+    *{margin:0;
+    padding:0;}
+html{
+    font-size: 62.5%;
+}
+body{
+    overflow:auto;
+    background-color:#fff9f9;
+}
+hr{
+    margin:3em 4em 5em;
+}
+#navispace{
+    transition:top 0.3s; 
+    position:fixed;
+    top:0px;
+    width:100%;
+    display:block;
+    z-index:2;
+}
+.navimenu{
+    background-color:rgb(87, 223, 178);
+    overflow:auto;
+}
+.navimenu a{
+    color:white;
+    font-size:2rem;
+    text-align:center;
+    display: inline-block;
+    padding:0.7em;
+}
+.navimenu a:hover{
+    background-color:cadetblue;
+    cursor:pointer;
+    text-decoration:underline;
+}
+.navimenu a:active{
+    background-color:rgb(87, 223, 178);
+    text-decoration:underline;
+}
+.cart{
+    width:4%;
+    margin:0.25%;
+    text-align:center;
+    min-width:40px;
+    padding:0.25%;
+    position:absolute;
+    bottom:10%;
+    right: 1%;
+}
+.cart:hover{
+    background-color:cadetblue;
+    cursor:pointer;
+}
+.cart:active{
+    background-color:rgb(87, 223, 178);
+}
+.loginnavi{
+    right: 10%; 
+    width:4%;
+    margin:0.25%;
+    text-align:center;
+    min-width:40px;
+    padding:0.25%;
+    display:inline-block;
+    position:absolute;
+    bottom:10%;
+    right: 10%;
+}
+.loginnavi:hover{
+    background-color:cadetblue;
+    cursor:pointer;
+}
+.loginnavi:active{
+    background-color:rgb(87, 223, 178);
+}
+table,td,th{
+    border:1px solid;
+}
+table{
+    width:100%;
+}
+th{
+    font-size:20px;
+}
+td{
+    height:20px;
+}
+#listspace{
+    background-color:#505050;
+    border-top:2px solid black;
+    border-bottom:2px solid black;
+    width:100%;
+ }
+ h1{
+    color:white;
+    text-align:center;
+    margin-top:1%;
+    font-size: 3rem;
+ }
+.list{
+    background-color:antiquewhite;
+    padding:4% 3%;
+    border: 2px solid;
+    margin:3% 2% 4%;
+    box-shadow: -3px 5px white;
+ }
+ #UserInfo{
+    border:1px solid;
+    margin:4% 10%;
+    padding: 4% 10%;
+    box-shadow:3px 7px gray;
+    background-color:#ddd6e1;
+ }
+.question{
+    text-align:center;
+    font-size:2.5rem;
+    font-family:Arial, Helvetica, sans-serif;
+ }
+.ansbox{
+    margin:3% 0%;
+    width:100%;
+    font-size:1.5rem;
+    padding:0.5rem;
+ }
+#submitBtn{
+    width:15%;
+    font-size:1.5rem;
+    margin:3% 40%;
+    border-radius:3px;
+    min-width:50px;
+ }
+ #submitBtn:hover{
+    background-color:darkgrey;
+    cursor:pointer;
+ }
+ #submitBtn:active{
+    background-color:#ddd6e1;
+ }
+ #end{
+    background-color:antiquewhite;
+    width:100%;
+    height:100px;
+    text-align: center;
+ }
+</style>
+<body>
+    <div id="navispace">
+        <div class="navimenu">
+            <a onclick="window.location.href='HomePage.html'">Home</a>
+            <a onclick="window.location.href='Products.html'">Products</a>
+            <a onclick="window.location.href='Contacts.html'">Contacts</a>
+            <a onclick="window.location.href='About.html'">About</a>
+            <div class="loginnavi" onclick="window.location.href='Login.html'">
+                <img src="person.png" alt="login"; width="40%" height="40%">
+            </div>
+            <div class="cart" onclick="window.location.href='Cart.html'">
+                <img src="shoppingcart.png" alt="addtocart"; width="60%" height="60%">
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div id="listspace">
+        <h1>Shopping Cart</h1>
+        <div class="list">
+            <table>
+                <tr>
+                    <th>ItemID</th>
+                    <th>Item</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <hr>
+    <form id="UserInfo">
+        <label for="FullName" class="question">Full Name:</label><br>
+        <input type="text" id="FullName" class="ansbox"><br>
+
+        <label for="Email" class="question">Email:</label><br>
+        <input type="text" id="Email" class="ansbox"><br>
+
+        <label for="ContactNum" class="question">Contact Number:</label><br>
+        <input type="text" id="ContactNum" class="ansbox"><br>
+        
+        <label for="Address" class="question">Address:</label><br>
+        <textarea id="Address" form="UserInfo" class="ansbox" rows="6"></textarea>
+
+        <input type="submit" value="Checkout" id="submitBtn">
+    </form>
+    <hr>
+    <div id="end">
+        <p>end of page</p>
+    </div>
+
+
+
+    <script>
+        var scrollpos1 = window.pageYOffset;
+        window.onscroll=function(){naviscroll()};
+        function naviscroll(){
+            var scrollpos2 = window.pageYOffset;
+            if(scrollpos1>scrollpos2){
+                document.getElementById("navispace").style.top="0px";
+            }
+            else{
+                document.getElementById("navispace").style.top="-100px";
+            }
+            scrollpos1 = scrollpos2;
+        }
+    </script>
+</body>
+</html>

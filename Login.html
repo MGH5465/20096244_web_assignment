@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang ='en'>
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Login Page</title>
+</head>
+<style>
+*{
+    margin:0;
+    padding:0;
+    height:100%;
+}
+html{
+    font-size: 62.5%;
+}
+body{
+    overflow:hidden;
+}
+#background{
+    height:100%;
+    background: linear-gradient(to bottom, #00ffcc 0%, #ccff99 100%);
+    display:flex;
+}
+#login{
+    background-color:rgb(240, 255, 255, 0.7);
+    width:100%;
+    height:60%;
+    position:absolute;
+    top:50%;
+    transform:translate(0%, -50%);
+    padding:3% 0%;
+}
+#loginform{
+    width:100%;
+    height:80%;
+    position:absolute;
+    top:60%;
+    right:50%;
+    transform:translate(50%, -40%);
+    text-align:center;
+}
+#loginbox{
+    width:30%;
+    height:90%;
+    position:absolute;
+    border-left:1px solid;
+    border-right:1px solid;
+    top:50%;
+    right:50%;
+    transform:translate(50%, -50%);
+    transition:1s;
+    display:block;
+}
+#loginbox:hover{
+    position:absolute;
+    transform:translate(50%, -51%);
+    transition:2s;
+}
+.info{
+    font-size:1.5rem;
+    margin-top:4%;
+}
+.txtbox{
+    font-size:1.3rem;
+    width:40%;
+    margin:2% 0%;
+    height:5%;
+    padding:3px 8px;
+    background-color:rgb(194, 191, 191,0.2);
+    border:none;
+    border-bottom:1px solid;
+}
+.txtbox:focus{
+    outline:none;
+}
+#submit{
+    margin-bottom:2%;
+    height: 30px;
+    width: 5em;
+}
+#submit:hover{
+    cursor:pointer;
+}
+.title{
+    font-size:2.5rem;
+}
+.logocontainer{
+    width:100px;
+    height:100px;
+    position:absolute;
+    top:20%;
+    right:50%;
+    transform:translate(50%, -80%);
+}
+.loginlogo{
+    width:100%;
+    height:100%;
+}
+hr{
+    margin:0.5em 3em 1em;
+    height:0%;
+}
+#username_error, #password_error{
+    font-size:1.2rem;
+    color:red;
+    height:1.2rem;
+    display:none;
+}
+.showpsw{
+    cursor:pointer; 
+    margin-bottom:5%;
+}
+.showpswcontainer{
+    height:8px;
+}
+.signuptext{
+    height:20px;
+    position:absolute;
+    bottom:5%;
+    right:50%;
+    transform:translate(50%, 100%);
+    font-size:1.4rem;
+    font-family:Arial, Helvetica, sans-serif;
+}
+.signuptext a{
+    color:blue;
+    text-decoration:underline;
+}
+.signuptext a:hover{
+    color:cornflowerblue;
+    cursor:pointer;
+}
+.signuptext a:active{
+    color:blue;
+}
+#signupbox{
+    width:30%;
+    height:90%;
+    position:absolute;
+    border-left:1px solid;
+    border-right:1px solid;
+    top:50%;
+    right:50%;
+    transform:translate(50%, -50%);
+    transition:1s;
+    display:none;
+}
+#signupbox:hover{
+    position:absolute;
+    transform:translate(50%, -51%);
+    transition:2s;
+}
+#username_errorSignup, #password_errorSignup, #Cpassword_errorSignup{
+    font-size:1.2rem;
+    color:red;
+    height:1.2rem;
+    display:none;
+}
+#Signupform{
+    width:100%;
+    height:80%;
+    position:absolute;
+    top:60%;
+    right:50%;
+    transform:translate(50%, -40%);
+    text-align:center;
+}
+.logintext{
+    height:20px;
+    position:absolute;
+    bottom:1%;
+    right:50%;
+    transform:translate(50%, 100%);
+    font-size:1.4rem;
+    font-family:Arial, Helvetica, sans-serif;
+}
+.logintext a{
+    color:blue;
+    text-decoration:underline;
+}
+.logintext a:hover{
+    color:cornflowerblue;
+    cursor:pointer;
+}
+.logintext a:active{
+    color:blue;
+}
+#popupback{
+    width:100%;
+    height:100%;
+    background-color:rgb(0, 0, 0, 0.4);
+    z-index: 5;
+    display:none;
+}
+#popup{
+    width:28%;
+    height:50%;
+    background-color:white;
+    position:absolute;
+    top:50%;
+    right:50%;
+    transform:translate(50%, -50%);
+    border-radius:20px;
+}
+.ticklogo{
+    width:min(20vw, 150px);
+    height:auto;
+    position:absolute;
+    top:35%;
+    right:50%;
+    transform:translate(50%, -65%);
+    border-radius:20px;
+}
+#popuptext{
+    font-size:2rem;
+    position:absolute;
+    top:80%;
+    right:50%;
+    transform:translate(50%, -20%);
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.fade{
+    animation-name:fade;
+    animation-duration:1s;
+}
+@keyframes fade{
+    0%{opacity: 0}
+    100%{opacity:1}
+}
+#ok{
+    height:4rem;
+    width:6rem;
+    font-size:2rem;
+    position:absolute;
+    top:80%;
+    right:50%;
+    transform:translate(50%, -20%);
+}
+#ok:hover{
+    cursor:pointer;
+}
+</style>
+<body>
+    <div id="background">
+        <div id =login>
+            <div id="loginbox">
+                <div class="logocontainer">
+                    <img src="person2.png" alt="Profile Logo" class="loginlogo"><br>
+                </div>
+                <form id="loginform" method="get">
+                    <label class="title">Login</label><br>
+                    <hr>
+                    <label for="username" class="info">Username:</label><br>
+                    <input type="text" id="username" class="txtbox" placeholder="Enter Username"><br>
+                    <div id="username_error"></div><br>
+
+                    <label for="password" class="info">Password:</label><br>
+                    <input type="password" id="password" class="txtbox" placeholder="Enter Password"><br>
+                    <div class="showpswcontainer">
+                        <label for="showpsw">Show Password</label>
+                        <input type="checkbox" class="showpsw" onclick="show_password()">
+                    </div>
+                    <div id="password_error"></div><br>
+
+                    <br><button type="submit" id="submit">Submit</button>
+                </form>
+                <div class="signuptext">
+                    <p>No Account? Sign up <a onclick="GoSignUp()">here!</a></p>
+                </div>
+            </div>
+
+            <div id="signupbox">
+                <div class="logocontainer">
+                    <img src="person2.png" alt="Profile Logo" class="loginlogo"><br>
+                </div>
+                <form id="Signupform" method="get">
+                    <label class="title">Sign up</label><br>
+                    <hr>
+                    <label for="usernameSignup" class="info">Username:</label><br>
+                    <input type="text" id="usernameSignup" class="txtbox" placeholder="Enter Username"><br>
+                    <div id="username_errorSignup"></div><br>
+
+                    <label for="passwordSignup" class="info">Password:</label><br>
+                    <input type="password" id="passwordSignup" class="txtbox" placeholder="Enter Password"><br>
+                    <div class="showpswcontainer">
+                        <label for="showpsw">Show Password</label>
+                        <input type="checkbox" class="showpsw" onclick="show_passwordSignup()">
+                    </div>
+                    <div id="password_errorSignup"></div><br>
+
+                    <label for="CpasswordSignup" class="info">Confirm Password:</label><br>
+                    <input type="password" id="CpasswordSignup" class="txtbox" placeholder="Enter Password"><br>
+                    <div class="showpswcontainer">
+                        <label for="showpsw">Show Password</label>
+                        <input type="checkbox" class="showpsw" onclick="show_CpasswordSignup()">
+                    </div>
+                    <div id="Cpassword_errorSignup"></div>
+
+                    <br><button type="submit" id="submit">Submit</button>
+                </form>
+                <div class="logintext">
+                    <a onclick="GoLogin()">Log in!</a>
+                </div>
+            </div>
+        </div>
+        <div id="popupback">
+            <div id="popup" class="fade">
+                <img src="greentick.png" alt="Success Logo" class="ticklogo"><br>
+                <div id="popuptext"></div>
+                <button type="button" id="ok" onclick="closepopup()">OK</button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        var username = document.getElementById("username");
+        var password = document.getElementById("password");
+        var loginform = document.getElementById("loginform");
+
+        loginform.addEventListener("submit",check_error);
+
+        function check_error(event){
+            event.preventDefault();
+            if(username.value==''||username.value==null){
+                document.getElementById("username_error").style.display="block";
+                document.getElementById("username_error").innerHTML="Please enter your Username";
+            }
+            else{
+                document.getElementById("username_error").style.display="none";
+            }
+            if(password.value==''||password.value==null){
+                document.getElementById("password_error").style.display="block";
+                document.getElementById("password_error").innerHTML="Please enter your password";
+            }
+            else{
+                document.getElementById("password_error").style.display="none";
+            }
+            if(username.value!==''&&
+            password.value!==''&&
+            username.value!==usernameSignup.value||
+            password.value!==passwordSignup.value){
+                document.getElementById("password_error").style.display="block";
+                document.getElementById("password_error").innerHTML="Password or Username error";
+            }
+            if(document.getElementById("password_error").style.display=="none"&&
+            document.getElementById("username_error").style.display=="none"){
+                document.getElementById("popupback").style.display="flex"
+                document.getElementById("popuptext").innerHTML="Login Succesful!"
+            }
+        }
+
+        function GoSignUp(){
+            document.getElementById("login").style.height="75%";
+            document.getElementById("signupbox").style.display="block";
+            document.getElementById("loginbox").style.display="none";
+        }
+
+        var usernameSignup = document.getElementById("usernameSignup");
+        var passwordSignup = document.getElementById("passwordSignup");
+        var CpasswordSignup = document.getElementById("CpasswordSignup");
+        var Signupform = document.getElementById("Signupform");
+
+        Signupform.addEventListener("submit",check_errorSignup);
+        
+        function check_errorSignup(event){
+            event.preventDefault();
+            if(usernameSignup.value==''||usernameSignup.value==null){
+                document.getElementById("username_errorSignup").style.display="block";
+                document.getElementById("username_errorSignup").innerHTML="Please enter your Username";
+            }
+            else{
+                document.getElementById("username_errorSignup").style.display="none";
+            }
+            if(passwordSignup.value==''||passwordSignup.value==null){
+                document.getElementById("password_errorSignup").style.display="block";
+                document.getElementById("password_errorSignup").innerHTML="Please enter your password";
+            }
+            else{
+                document.getElementById("password_errorSignup").style.display="none";
+            }
+            if(CpasswordSignup.value==''||CpasswordSignup.value==null){
+                document.getElementById("Cpassword_errorSignup").style.display="block";
+                document.getElementById("Cpassword_errorSignup").innerHTML="Please enter your password";
+            }
+            else{
+                document.getElementById("Cpassword_errorSignup").style.display="none";
+            }
+            if(passwordSignup.value!==''&&CpasswordSignup.value!==''&&passwordSignup.value!==CpasswordSignup.value){
+                document.getElementById("Cpassword_errorSignup").style.display="block";
+                document.getElementById("Cpassword_errorSignup").innerHTML="Confirm password must be same as password";
+            }
+            if(passwordSignup.value!==''&&
+            CpasswordSignup.value!==''&&
+            passwordSignup.value.length<6){
+                document.getElementById("password_errorSignup").style.display="block";
+                document.getElementById("password_errorSignup").innerHTML="Password should be 6 letters or more";
+            }
+            if(document.getElementById("Cpassword_errorSignup").style.display=="none"&&
+            document.getElementById("password_errorSignup").style.display=="none"&&
+            document.getElementById("username_errorSignup").style.display=="none"){
+                document.getElementById("popupback").style.display="flex"
+                document.getElementById("popuptext").innerHTML="Sign up Succesful!"
+            }
+        }
+
+        function show_password(){
+            if(password.type=="password"){
+                password.type="text";
+            }
+            else{
+                password.type="password";
+            }
+        }
+
+        function show_CpasswordSignup(){
+            if(CpasswordSignup.type=="password"){
+                CpasswordSignup.type="text";
+            }
+            else{
+                CpasswordSignup.type="password";
+            }
+        }
+
+        function show_passwordSignup(){
+            if(passwordSignup.type=="password"){
+                passwordSignup.type="text";
+            }
+            else{
+                passwordSignup.type="password";
+            }
+        }
+
+        function GoLogin(){
+            document.getElementById("login").style.height="60%";
+            document.getElementById("signupbox").style.display="none";
+            document.getElementById("loginbox").style.display="block";
+        }
+        function closepopup(){
+            document.getElementById("popupback").style.display="none";
+            if(document.getElementById("signupbox").style.display=="block"){
+                GoLogin()
+            }
+            else{
+               window.location.href='HomePage.html'
+            }
+        }
+    </script>
+</body>
+</html>
